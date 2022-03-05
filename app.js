@@ -25,7 +25,7 @@ app.use((req, res, next) => {
     next(new BadRequestError(404, "Resource not found"));
 });
     // define error-handling middleware last, after other app.use() and routes calls
-app.use((err, req, res, next) => {
+app.use((error, req, res, next) => {
     // Middleware xử lý lỗi tập trung.
     // Trong các đoạn code xử lý ở các route, gọi next(error)
     // sẽ chuyển về middleware xử lý lỗi này
